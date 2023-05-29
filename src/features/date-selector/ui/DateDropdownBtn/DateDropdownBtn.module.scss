@@ -1,0 +1,49 @@
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: none;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+    &:hover {
+        background-color: rgba(0, 44, 251, 0.13);
+
+        .text {
+            color: var(--text-color);
+        }
+    }
+
+    .text {
+        color: var(--text-header-color);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+        padding-left: 20px;
+
+        &Calendar {
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        &.selected {
+            color: var(--ui-accent);
+        }
+    }
+
+    &.calendar {
+        height: auto;
+    }
+
+    .calendar {
+        padding: 0 21px 0 20px;
+        margin-bottom: 20px;
+
+        .ant-picker-range-separator {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.dropdown {
+    width: 204px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    margin-top: 32px;
+    border: 1px solid #EAF0FA;
+    box-shadow: 0 0 26px rgba(233, 237, 243, 0.8);
+    border-radius: 4px;
+    overflow: hidden;
+}
