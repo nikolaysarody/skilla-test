@@ -1,6 +1,12 @@
 .balance {
     display: flex;
-    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-    justify-content: end;
+
+    .wrapper {
+        min-width: 1440px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
 }

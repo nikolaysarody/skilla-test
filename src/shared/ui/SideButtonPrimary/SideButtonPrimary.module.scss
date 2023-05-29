@@ -6,10 +6,17 @@
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-between;
     position: relative;
     cursor: pointer;
+
+    &:hover {
+        background-color: var(--ui-hover);
+    }
+
+    &:active {
+        background-color: var(--ui-active);
+    }
 
     &:last-child {
         margin-top: 32px;
@@ -21,13 +28,30 @@
         font-size: 16px;
         line-height: 148%;
         color: #FFFFFF;
-        position: relative;
-        right: 17px;
         letter-spacing: 0.4px;
+
+        &.pay {
+            position: relative;
+            left: 65px;
+        }
+
+        &.primary {
+            position: relative;
+            left: 24px;
+        }
     }
 
+
+
     .icon {
-        position: absolute;
-        right: 20px;
+        &.pay {
+            position: relative;
+            right: 22.5px;
+        }
+
+        &.primary {
+            position: relative;
+            right: 20px;
+        }
     }
 }

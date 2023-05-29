@@ -11,7 +11,7 @@ export const Balance: FC<BalanceProps> = ({ count }) => {
             <span className={styles.text}>
                 Баланс: <span className={styles.count}>{count} ₽</span>
             </span>
-            <img className={styles.icon} src={`${process.env.PUBLIC_URL}/icons/balance.svg`} alt="Balance" />
+            <div className={styles.icon} />
         </div>
     );
 };

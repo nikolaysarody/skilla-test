@@ -1,66 +1,67 @@
 import React from 'react';
 import { SideButton } from '../../../shared/ui/SideButton/SideButton';
 import { SideButtonPrimary } from '../../../shared/ui/SideButtonPrimary/SideButtonPrimary';
+import { PUBLIC_FOLDER } from '../../../shared/helpers';
 import styles from './SideMenu.module.scss';
 
 export const SideMenu = () => {
     const buttons = [
         {
-            icon: `${process.env.PUBLIC_URL}/icons/results.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/results.svg`,
             title: 'Итоги',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/orders.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/orders.svg`,
             title: 'Заказы',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/mails.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/mails.svg`,
             title: 'Сообщения',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/calls.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/calls.svg`,
             title: 'Звонки',
             isActive: true,
             isNewActivity: true,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/counterparty.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/counterparty.svg`,
             title: 'Контрагенты',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/docs.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/docs.svg`,
             title: 'Документы',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/workers.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/workers.svg`,
             title: 'Исполнители',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/reports.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/reports.svg`,
             title: 'Отчеты',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/db.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/db.svg`,
             title: 'База знаний',
             isActive: false,
             isNewActivity: false,
         },
         {
-            icon: `${process.env.PUBLIC_URL}/icons/settings.svg`,
+            icon: `${PUBLIC_FOLDER}/icons/settings.svg`,
             title: 'Настройки',
             isActive: false,
             isNewActivity: false,
@@ -70,7 +71,7 @@ export const SideMenu = () => {
     return (
         <div className={styles.sideMenu}>
             <div className={styles.logoWrapper}>
-                <img className={styles.logo} src={`${process.env.PUBLIC_URL}/icons/logo.svg`} alt="Logo" />
+                <img className={styles.logo} src={`${PUBLIC_FOLDER}/icons/logo.svg`} alt="Logo" />
             </div>
             {buttons.map((item) => (
                 <SideButton
@@ -82,16 +83,8 @@ export const SideMenu = () => {
                 />
             ))}
             <div className={styles.btnPrimary}>
-                <SideButtonPrimary
-                    title="Добавить заказ"
-                    icon={`${process.env.PUBLIC_URL}/icons/add-order.svg`}
-                    key={`${process.env.PUBLIC_URL}/icons/add-order.svg`}
-                />
-                <SideButtonPrimary
-                    title="Оплата"
-                    icon={`${process.env.PUBLIC_URL}/icons/pay.svg`}
-                    key={`${process.env.PUBLIC_URL}/icons/pay.svg`}
-                />
+                <SideButtonPrimary type="primary" key="primary" />
+                <SideButtonPrimary type="pay" key="pay" />
             </div>
         </div>
     );

@@ -1,0 +1,82 @@
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 115px;
+    height: 24px;
+    cursor: pointer;
+
+    .iconWrapper {
+        width: 16px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+            .arrow {
+                &.right {
+                    background-image: url('../icons/keyboard-arrow-right-hover.svg');
+                }
+            }
+
+            .arrow {
+                &.left {
+                    background-image: url('../icons/keyboard-arrow-left-hover.svg');
+                }
+            }
+        }
+
+        .arrow {
+            &.right {
+                position: absolute;
+                right: 2px;
+                width: 6.17px;
+                height: 10px;
+                background-image: url('../icons/keyboard-arrow-right.svg');
+            }
+
+            &.left {
+                display: flex;
+                justify-content: start;
+                width: 6.17px;
+                height: 10px;
+                background-image: url('../icons/keyboard-arrow-left.svg');
+            }
+        }
+    }
+
+
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            .icon {
+                background-image: url('../icons/icon-calendar-hover.png');
+            }
+        }
+
+        .icon {
+            width: 16px;
+            height: 18px;
+            margin-right: 8px;
+            position: relative;
+            right: 1px;
+            background-image: url('../icons/icon-calendar.png');
+
+            //&:hover {
+            //    background-image: url('../icons/icon-calendar-hover.png');
+            //}
+        }
+
+        .text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #005FF8;
+        }
+    }
+}

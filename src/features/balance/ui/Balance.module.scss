@@ -6,6 +6,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 48px;
+    cursor: pointer;
+
+    &:hover {
+        .count, .icon {
+            color: var(--ui-hover);
+        }
+
+        .icon {
+            background-image: url('../icons/balance-hover.svg');
+        }
+    }
 
     .text, .count {
         color: var(--text-header-color);
@@ -13,9 +25,11 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 148%;
+        letter-spacing: 0.1px;
     }
 
     .count {
+        font-weight: 500;
         color: var(--text-color);
     }
 
@@ -24,5 +38,6 @@
         width: 24px;
         height: 24px;
         cursor: pointer;
+        background-image: url('../icons/balance.svg');
     }
 }
