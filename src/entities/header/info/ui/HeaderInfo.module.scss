@@ -1,0 +1,31 @@
+.call {
+    margin-right: 56px;
+    // в макете поднятно на 1px относительно середины
+    position: relative;
+    bottom: 1px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 148%;
+        letter-spacing: 0.18px;
+        color: var(--text-color);
+    }
+
+    .green {
+        color: var(--ui-green-color);
+    }
+
+    .yellow {
+        color: var(--ui-yellow-color);
+    }
+
+    .red {
+        color: var(--ui-red-color);
+    }
+}

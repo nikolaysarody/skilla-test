@@ -1,0 +1,28 @@
+.balance {
+    background: #FFFFFF;
+    border-radius: 48px;
+    width: 145px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text, .count {
+        color: var(--text-header-color);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 148%;
+    }
+
+    .count {
+        color: var(--text-color);
+    }
+
+    .icon {
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+}

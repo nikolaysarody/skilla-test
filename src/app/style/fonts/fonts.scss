@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "SFProDisplay";
+    src: local("SFProDisplay"), url("assets/SF-Pro-Display-Regular.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFProDisplay";
+    src: local("SFProDisplay"), url("assets/SF-Pro-Display-Light.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+// шрифты не совпадают по weight с макетом, пробовал из разных источников

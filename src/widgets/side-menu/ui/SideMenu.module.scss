@@ -1,0 +1,25 @@
+.sideMenu {
+    width: 240px;
+    height: 100vh;
+    background: #091336;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+
+    .logoWrapper {
+        width: 100%;
+        display: flex;
+        align-content: start;
+
+        .logo {
+            margin: 20px 0 32px 12px;
+            cursor: pointer;
+        }
+    }
+
+    .btnPrimary {
+        margin-top: 64px;
+    }
+}

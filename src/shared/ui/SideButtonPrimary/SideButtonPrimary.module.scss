@@ -1,0 +1,33 @@
+.button {
+    width: 200px;
+    height: 52px;
+    background: #005FF8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    &:last-child {
+        margin-top: 32px;
+    }
+
+    .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 148%;
+        color: #FFFFFF;
+        position: relative;
+        right: 17px;
+        letter-spacing: 0.4px;
+    }
+
+    .icon {
+        position: absolute;
+        right: 20px;
+    }
+}

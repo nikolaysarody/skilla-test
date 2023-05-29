@@ -1,0 +1,25 @@
+.container {
+    width: 156px;
+    height: 6px;
+    background-color: #DEE6F5;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 7px;
+}
+
+.filler {
+    border-radius: 12px 0 0 12px;
+    height: 6px;
+}
+
+.green {
+    background-color: var(--ui-green-color);
+}
+
+.yellow {
+    background-color: var(--ui-yellow-color);
+}
+
+.red {
+    background-color: var(--ui-red-color);
+}

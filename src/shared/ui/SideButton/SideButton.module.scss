@@ -1,0 +1,56 @@
+.btn {
+    width: 240px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+
+    .text {
+        color: rgba(255, 255, 255, 0.6);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        min-width: 170px;
+        margin-right: 22px;
+        // в макете поднятно на 1px относительно середины
+        position: relative;
+        bottom: 1px;
+        letter-spacing: 0.4px;
+
+        &Active {
+            color: #FFFFFF;
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+
+        &Active {
+            position: relative;
+            right: 2px;
+        }
+    }
+
+    .newActivity {
+        background: #FFD500;
+        box-shadow: 0 3px 8px rgba(237, 218, 1, 0.5);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: absolute;
+        right: 12px;
+    }
+}
+
+.active {
+    border-left: solid var(--ui-accent) 3px;
+    background: rgba(216, 228, 251, 0.32);
+    justify-content: space-around;
+}
