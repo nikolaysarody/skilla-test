@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 2;
 
     .date {
         display: flex;
@@ -17,17 +18,20 @@
             display: flex;
             align-items: center;
             position: relative;
+            background-color: inherit;
+            border: 0;
+            cursor: pointer;
 
             &:hover {
                 .arrow {
                     &.right {
-                        background-image: url('../../icons/keyboard-arrow-right-hover.svg');
+                        background-image: url('../icons/keyboard-arrow-right-hover.svg');
                     }
                 }
 
                 .arrow {
                     &.left {
-                        background-image: url('../../icons/keyboard-arrow-left-hover.svg');
+                        background-image: url('../icons/keyboard-arrow-left-hover.svg');
                     }
                 }
             }
@@ -38,28 +42,29 @@
                     right: 2px;
                     width: 6.17px;
                     height: 10px;
-                    background-image: url('../../icons/keyboard-arrow-right.svg');
+                    background-image: url('../icons/keyboard-arrow-right.svg');
                 }
 
                 &.left {
                     display: flex;
-                    justify-content: start;
+                    justify-content: flex-start;
                     width: 6.17px;
                     height: 10px;
-                    background-image: url('../../icons/keyboard-arrow-left.svg');
+                    background-image: url('../icons/keyboard-arrow-left.svg');
                 }
             }
         }
 
-
-
         .wrapper {
             display: flex;
             align-items: center;
+            border: 0;
+            background-color: inherit;
+            cursor: pointer;
 
             &:hover {
                 .icon {
-                    background-image: url('../../icons/icon-calendar-hover.png');
+                    background-image: url('../icons/icon-calendar-hover.png');
                 }
             }
 
@@ -69,11 +74,7 @@
                 margin-right: 8px;
                 position: relative;
                 right: 1px;
-                background-image: url('../../icons/icon-calendar.png');
-
-                //&:hover {
-                //    background-image: url('../icons/icon-calendar-hover.png');
-                //}
+                background-image: url('../icons/icon-calendar.png');
             }
 
             .text {

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { ProgressBar } from '../../../../shared/ui/ProgressBar/ProgressBar';
-import { classNames } from '../../../../shared/lib/classNames/classNames';
+import { ProgressBar } from '../../../../../shared/ui/ProgressBar/ProgressBar';
+import { classNames } from '../../../../../shared/lib/classNames/classNames';
 import styles from './HeaderInfo.module.scss';
 
 interface HeaderInfoProps {

@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 48px;
+
+    .wrapper {
+        min-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dropdowns {
+        display: flex;
+        align-items: center;
+    }
+
+    .reset {
+        display: flex;
+        align-items: center;
+        margin-right: 48px;
+        cursor: pointer;
+        background-color: inherit;
+        border: 0;
+
+        .text {
+            color: var(--text-secondary-color);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .icon {
+           margin-left: 4px;
+        }
+    }
+}

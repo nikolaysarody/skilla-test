@@ -5,7 +5,7 @@ import styles from './CallsLayout.module.scss';
 
 export const CallsLayout = () => {
     return (
-        <div className={styles.balance}>
+        <div className={styles.container}>
             <div className={styles.wrapper}>
                 <Balance count={272} />
                 <DateSelector />

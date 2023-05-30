@@ -1,0 +1,20 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 140px;
+    height: 20px;
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: var(--text-secondary-color);
+    }
+}

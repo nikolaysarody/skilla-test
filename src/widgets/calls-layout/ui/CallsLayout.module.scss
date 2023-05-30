@@ -1,4 +1,4 @@
-.balance {
+.container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -6,7 +6,7 @@
     .wrapper {
         min-width: 1440px;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
     }
 }

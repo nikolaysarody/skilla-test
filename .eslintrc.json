@@ -54,6 +54,8 @@
         "@typescript-eslint/no-unused-vars": "warn",
         "prettier/prettier": ["error", { "endOfLine": "auto" }],
         "prefer-const": "warn",
-        "react/function-component-definition": [2, { "namedComponents": "arrow-function" }]
+        "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+        "jsx-a11y/control-has-associated-label": "off",
+        "react/default-props-match-prop-types": "off"
     }
 }

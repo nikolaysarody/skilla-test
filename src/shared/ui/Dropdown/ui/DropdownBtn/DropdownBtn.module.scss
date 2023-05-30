@@ -25,26 +25,8 @@
         line-height: 28px;
         padding-left: 20px;
 
-        &Calendar {
-            color: var(--text-color);
-            margin-bottom: 8px;
-        }
-
         &.selected {
             color: var(--ui-accent);
-        }
-    }
-
-    &.calendar {
-        height: auto;
-    }
-
-    .calendar {
-        padding: 0 21px 0 20px;
-        margin-bottom: 20px;
-
-        .ant-picker-range-separator {
-            padding: 0;
         }
     }
 }

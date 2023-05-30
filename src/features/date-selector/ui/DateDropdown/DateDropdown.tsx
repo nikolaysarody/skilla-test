@@ -1,73 +1,49 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { DateDropdownBtn } from '../DateDropdownBtn/DateDropdownBtn';
-import { TypeTitles } from '../../lib/types';
+import { classNames } from '../../../../shared/lib/classNames/classNames';
+import { useAppSelector } from '../../../../shared/lib/hooks';
+import { TypeTitles } from '../../../../entities/header/model/types';
 import styles from './DateDropdown.module.scss';
 
 interface DateDropdownProps {
-    setTitle: (title: TypeTitles) => void;
+    hidden: boolean;
+    statusSwitch: () => void;
 }
 
-export const DateDropdown: FC<DateDropdownProps> = ({ setTitle }) => {
-    const [time, setTime] = useState<Date>(new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000));
-    const [selectedType, setSelectedType] = useState<TypeTitles>(TypeTitles.days);
-
-    useEffect(() => {
-        setTitle(selectedType);
-        let date = new Date().getTime();
-        switch (selectedType) {
-            case TypeTitles.days: {
-                date -= 3 * 24 * 60 * 60 * 1000;
-                break;
-            }
-            case TypeTitles.week: {
-                date -= 7 * 24 * 60 * 60 * 1000;
-                break;
-            }
-            case TypeTitles.month: {
-                date -= 30 * 24 * 60 * 60 * 1000;
-                break;
-            }
-            case TypeTitles.year: {
-                date -= 365 * 24 * 60 * 60 * 1000;
-                break;
-            }
-            default:
-                break;
-        }
-        setTime(new Date(date));
-    }, [setTitle, selectedType]);
+export const DateDropdown: FC<DateDropdownProps> = ({ hidden, statusSwitch }) => {
+    const title = useAppSelector((state) => state.calls.selectedDateType);
 
     return (
-        <div className={styles.dropdown}>
+        <div className={classNames(styles.dropdown, {}, [hidden ? styles.hidden : ''])}>
             <DateDropdownBtn
                 type={TypeTitles.days}
-                selected={selectedType === TypeTitles.days}
-                value={setSelectedType}
+                selected={title === TypeTitles.days}
                 key="days"
+                statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.week}
-                selected={selectedType === TypeTitles.week}
-                value={setSelectedType}
+                selected={title === TypeTitles.week}
                 key="week"
+                statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.month}
-                selected={selectedType === TypeTitles.month}
-                value={setSelectedType}
+                selected={title === TypeTitles.month}
                 key="month"
+                statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.year}
-                selected={selectedType === TypeTitles.year}
-                value={setSelectedType}
+                selected={title === TypeTitles.year}
                 key="year"
+                statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.customDate}
-                selected={selectedType === TypeTitles.customDate}
-                value={setSelectedType}
+                selected={title === TypeTitles.customDate}
                 key="customDate"
+                statusSwitch={statusSwitch}
             />
         </div>
     );

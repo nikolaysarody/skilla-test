@@ -1,0 +1,101 @@
+.wrapper {
+    position: relative;
+    margin-right: 32px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.active {
+        z-index: 1;
+    }
+
+    .dropdown {
+        width: 204px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        border: 1px solid #EAF0FA;
+        box-shadow: 0 0 26px rgba(233, 237, 243, 0.8);
+        border-radius: 4px;
+        overflow: hidden;
+        background-color: #FFFFFF;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: inherit;
+        border: 0;
+        cursor: pointer;
+
+        .text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 148%;
+            color: var(--text-secondary-color);
+            opacity: 0.87;
+
+            &.selected {
+                color: var(--ui-accent);
+            }
+        }
+
+
+        &:hover {
+            .icon {
+                background-image: url("../icons/up-arrow-hover.svg");
+            }
+
+        }
+
+        &:active {
+            .icon {
+                background-image: url("../icons/up-arrow-active.svg");
+            }
+
+        }
+
+        &.hidden {
+            .icon {
+                background-image: url("../icons/up-arrow-default.svg");
+                transform: none;
+            }
+
+
+            &:hover {
+                .icon {
+                    background-image: url("../icons/up-arrow-hover.svg");
+                }
+
+            }
+
+            &:active {
+                .icon {
+                    background-image: url("../icons/up-arrow-active.svg");
+                }
+
+            }
+        }
+
+        .icon {
+            width: 18px;
+            height: 21px;
+            margin-left: 4px;
+            background-image: url("../icons/up-arrow-default.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+            background-color: inherit;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+}

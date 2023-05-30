@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { HeaderInfo } from '../../../entities/header/info/ui/HeaderInfo';
+import { HeaderInfo } from '../../../entities/header/ui/info/ui/HeaderInfo';
 import { UserDropdown } from '../../../features/user-dropdown/ui/UserDropdown';
 import { ProfileDropdown } from '../../../features/profile-dropdown/ui/ProfileDropdown';
-import { HeaderDate } from '../../../entities/header/date/ui/HeaderDate';
+import { HeaderDate } from '../../../entities/header/ui/date/ui/HeaderDate';
 import { PUBLIC_FOLDER } from '../../../shared/helpers';
 import styles from './Header.module.scss';
 

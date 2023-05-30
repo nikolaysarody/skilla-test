@@ -2,23 +2,44 @@ import React, { FC } from 'react';
 import { DatePicker } from 'antd';
 import locale from 'antd/es/date-picker/locale/ru_RU';
 import { classNames } from '../../../../shared/lib/classNames/classNames';
-import { TypeTitles } from '../../lib/types';
 import { PUBLIC_FOLDER } from '../../../../shared/helpers';
+import { useAppDispatch } from '../../../../shared/lib/hooks';
+import { setDateRange, setDateType } from '../../../../entities/header/model';
+import { TypeTitles } from '../../../../entities/header/model/types';
+import calcDate from '../../lib/helpers/calcDate';
 import styles from './DateDropdownBtn.module.scss';
 
 interface DateDropdownBtnProps {
     type: TypeTitles;
     selected: boolean;
-    value: (item: TypeTitles) => void;
+    statusSwitch: () => void;
 }
 const { RangePicker } = DatePicker;
 
-export const DateDropdownBtn: FC<DateDropdownBtnProps> = ({ type, selected, value }) => {
+export const DateDropdownBtn: FC<DateDropdownBtnProps> = ({ type, selected, statusSwitch }) => {
+    const dispatch = useAppDispatch();
+    const setTime = (dates: [string, string]) => {
+        const beginDate = dates[0].split('.').map((item) => +item);
+        const endDate = dates[1].split('.').map((item) => +item);
+        dispatch(
+            setDateRange([
+                new Date(beginDate[2] + 2000, beginDate[1] - 1, beginDate[0]),
+                new Date(endDate[2] + 2000, endDate[1] - 1, endDate[0]),
+            ])
+        );
+    };
+
     return (
         <button
             className={classNames(styles.btn, {}, [type === TypeTitles.customDate ? styles.calendar : ''])}
             type="button"
-            onClick={() => value(type)}
+            onClick={() => {
+                dispatch(setDateType(type));
+                dispatch(setDateRange([calcDate(type), new Date()]));
+                if (type !== TypeTitles.customDate) {
+                    statusSwitch();
+                }
+            }}
         >
             <span
                 className={classNames(styles.text, {}, [
@@ -38,13 +59,14 @@ export const DateDropdownBtn: FC<DateDropdownBtnProps> = ({ type, selected, valu
                         lineHeight: 28,
                         color: '#ADBFDF',
                     }}
-                    separator={<span style={{ padding: 0 }}>-</span>}
+                    separator="-"
                     placeholder={['__.__.__', '__.__.__']}
                     locale={locale}
                     bordered={false}
                     format="DD.MM.YY"
                     allowClear={false}
                     suffixIcon={<img src={`${PUBLIC_FOLDER}/icons/icon-calendar.png`} alt="" />}
+                    onChange={(a, b) => setTime(b)}
                 />
             ) : null}
         </button>
