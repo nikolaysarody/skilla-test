@@ -6,8 +6,8 @@ import { AudioProgress } from '../AudioProgress/ui/AudioProgress';
 import { useAppDispatch, useAppSelector } from '../../../../shared/lib/hooks';
 import { fetchCallRecord } from '../../model/action';
 import { classNames } from '../../../../shared/lib/classNames/classNames';
+import { resetSrc } from '../../model';
 import styles from './AudioPlayer.module.scss';
-// import { resetSrc } from '../../model';
 
 interface AudioPlayerProps {
     record: string;
@@ -28,7 +28,17 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
 
     const playSwitch = () => {
         setIsPlaying((prev) => !prev);
-        if (!isPlaying) {
+        if (src === '') {
+            dispatch(fetchCallRecord({ record, partnership_id })).then(() => {
+                if (!isPlaying) {
+                    if (audioRef.current !== null) {
+                        audioRef.current.play();
+                    }
+                } else if (audioRef.current !== null) {
+                    audioRef.current.pause();
+                }
+            });
+        } else if (!isPlaying) {
             if (audioRef.current !== null) {
                 audioRef.current.play();
             }
@@ -63,12 +73,11 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
     };
 
     useEffect(() => {
-        // dispatch(resetSrc);
-        dispatch(fetchCallRecord({ record, partnership_id }));
+        dispatch(resetSrc());
     }, []);
 
     useEffect(() => {
-        if (audioRef.current !== null && offset !== 0) {
+        if (audioRef.current !== null && offset !== 0 && isPlaying) {
             const audioDuration = audioRef.current.duration;
             audioRef.current.currentTime = (offset / progressBarWidth) * audioDuration;
         }

@@ -51,19 +51,13 @@ export const TableRow: FC<TableRowProps> = ({
         return null;
     };
 
-    // useEffect(() => {
-    //     if (record !== '') {
-    //         dispatch(fetchCallRecord({ record, partnership_id }));
-    //     }
-    // }, []);
-
     return (
         <div className={styles.container} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             <img className={styles.type} src={`${PUBLIC_FOLDER}/icons/${callType(type)}`} alt="Type" />
             <span className={styles.time}>{`${time.split(' ')[1].split(':')[0]}:${
                 time.split(' ')[1].split(':')[1]
             }`}</span>
-            <img className={styles.employee} src={employee} alt="Profile" />
+            <img className={styles.employee} src={employee || 'https://lk.skilla.ru/img/noavatar.jpg'} alt="Profile" />
             <div className={classNames(styles.web, { [styles.show]: isWeb === 1 }, [])} />
             <span className={styles.call}>{phoneParser(call.toString())}</span>
             <span className={styles.source}>{source}</span>
