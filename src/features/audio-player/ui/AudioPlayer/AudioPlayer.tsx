@@ -72,6 +72,10 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
         }
     };
 
+    // const saveFile = () => {
+    //     saveAs(src, 'record.mp3');
+    // };
+
     useEffect(() => {
         dispatch(resetSrc());
     }, []);
@@ -97,8 +101,10 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
                 type="button"
                 className={classNames(styles.download, { [styles.disabled]: loading }, [])}
                 onClick={() => {
-                    if (!loading) {
+                    if (src !== '') {
                         saveAs(src, 'record.mp3');
+                    } else {
+                        dispatch(fetchCallRecord({ record, partnership_id })).then((res) => saveAs(res, 'record.mp3'));
                     }
                 }}
             />

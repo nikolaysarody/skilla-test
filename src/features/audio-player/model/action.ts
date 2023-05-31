@@ -13,10 +13,12 @@ export const fetchCallRecord = (params: RecordParams) => {
             });
             const url = URL.createObjectURL(file);
             dispatch(fetchSuccessRecord(url));
+            return url;
         } catch (e) {
             if (isAxiosError(e) && e.response != null) {
                 dispatch(fetchErrorRecord(e.response.data.message));
             }
+            return '';
         }
     };
 };
