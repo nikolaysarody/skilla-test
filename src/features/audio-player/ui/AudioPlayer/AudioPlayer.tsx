@@ -72,10 +72,6 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
         }
     };
 
-    // const saveFile = () => {
-    //     saveAs(src, 'record.mp3');
-    // };
-
     useEffect(() => {
         dispatch(resetSrc());
     }, []);
