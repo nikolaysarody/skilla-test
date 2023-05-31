@@ -1,0 +1,109 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    border-top: solid 1px #EAF0FA;
+    //padding-left: 40px;
+    //margin-right: 40px;
+    margin-left: 40px;
+    //padding-right: 40px;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(212, 223, 243, 0.17);
+        margin-left: 0;
+        padding-left: 40px;
+        border-bottom: solid 1px #EAF0FA;
+
+        & + .container {
+            border-top: 0;
+        }
+
+        .duration {
+            right: 40px;
+        }
+    }
+
+    .type {
+        width: 12.52px;
+        height: 12.52px;
+        margin-left: 6px;
+    }
+
+    .time {
+        width: 38px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        color: var(--text-color);
+        margin-left: 37.48px;
+    }
+
+    .employee {
+        margin-left: 48px;
+        width: 32px;
+        height: 32px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .web {
+        margin-left: 45.67px;
+        width: 16.67px;
+        height: 16.67px;
+
+        &.show {
+            background-image: url("icons/web.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    .call {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-left: 33.67px;
+        width: 246px;
+        height: 29px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        position: relative;
+        bottom: 4px;
+    }
+
+    .source {
+        margin-left: 80px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        color: #5E7793;
+        width: 197px;
+        word-wrap: normal;
+    }
+
+    .rate {
+        margin-left: 17px;
+        color: var(--ui-red-color);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+    }
+
+    .duration {
+        position: absolute;
+        right: 80px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 140%;
+        color: var(--text-color);
+    }
+}

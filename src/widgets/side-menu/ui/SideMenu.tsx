@@ -1,7 +1,7 @@
 import React from 'react';
 import { SideButton } from '../../../shared/ui/SideButton/SideButton';
 import { SideButtonPrimary } from '../../../shared/ui/SideButtonPrimary/SideButtonPrimary';
-import { PUBLIC_FOLDER } from '../../../shared/helpers';
+import { PUBLIC_FOLDER } from '../../../shared/lib/helpers';
 import styles from './SideMenu.module.scss';
 
 export const SideMenu = () => {

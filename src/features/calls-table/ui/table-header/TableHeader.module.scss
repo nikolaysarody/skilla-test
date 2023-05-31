@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    align-items: center;
+    min-width: 1360px;
+    height: 60px;
+
+    .text {
+        color: var(--text-header-color);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        position: relative;
+        top: 3px;
+        letter-spacing: 0.015rem;
+
+        &.type {
+            margin-right: 30px;
+        }
+
+        &.time {
+            margin-right: 48px;
+        }
+
+        &.employee {
+            margin-right: 60px;
+        }
+
+        &.call {
+            margin-right: 281px;
+        }
+
+        &.source {
+            margin-right: 154px;
+        }
+
+        &.rate {
+            margin-right: 414px;
+        }
+
+    }
+}

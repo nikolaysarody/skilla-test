@@ -1,0 +1,67 @@
+.audio {
+    width: 352px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: #EAF0FA;
+    border-radius: 48px;
+
+    .duration {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 145%;
+        color: var(--text-color);
+        margin-left: 19px;
+    }
+
+    .play, .pause, .download, .close {
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+    }
+
+    .play, .pause, .loading {
+        width: 24px;
+        height: 24px;
+        margin-left: 12px;
+    }
+
+    .play {
+        background-image: url("../icons/play.svg");
+    }
+
+    .pause {
+        background-image: url("../icons/pause.svg");
+    }
+
+    .download {
+        margin-left: 18px;
+        background-image: url("../icons/download.svg");
+        width: 13px;
+        height: 16px;
+
+        &:hover {
+            background-image: url("../icons/download-hover.svg");
+        }
+
+        &.disabled {
+            background-image: url("../icons/download.svg");
+            user-select: none;
+            cursor: no-drop;
+        }
+    }
+
+    .close {
+        width: 14px;
+        height: 14px;
+        margin-left: 22px;
+        background-image: url("../icons/close.svg");
+
+        &:hover {
+            background-image: url("../icons/close-hover.svg");
+        }
+    }
+}

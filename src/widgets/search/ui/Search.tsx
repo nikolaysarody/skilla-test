@@ -19,7 +19,7 @@ import {
     FilterSources,
     FilterTypes,
 } from '../../../entities/header/model/types';
-import { PUBLIC_FOLDER } from '../../../shared/helpers';
+import { PUBLIC_FOLDER } from '../../../shared/lib/helpers';
 import styles from './Search.module.scss';
 
 export const Search = () => {

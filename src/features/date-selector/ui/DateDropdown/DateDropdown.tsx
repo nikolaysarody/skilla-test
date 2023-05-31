@@ -18,31 +18,31 @@ export const DateDropdown: FC<DateDropdownProps> = ({ hidden, statusSwitch }) =>
             <DateDropdownBtn
                 type={TypeTitles.days}
                 selected={title === TypeTitles.days}
-                key="days"
+                key={TypeTitles.days}
                 statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.week}
                 selected={title === TypeTitles.week}
-                key="week"
+                key={TypeTitles.week}
                 statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.month}
                 selected={title === TypeTitles.month}
-                key="month"
+                key={TypeTitles.month}
                 statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.year}
                 selected={title === TypeTitles.year}
-                key="year"
+                key={TypeTitles.year}
                 statusSwitch={statusSwitch}
             />
             <DateDropdownBtn
                 type={TypeTitles.customDate}
                 selected={title === TypeTitles.customDate}
-                key="customDate"
+                key={TypeTitles.customDate}
                 statusSwitch={statusSwitch}
             />
         </div>

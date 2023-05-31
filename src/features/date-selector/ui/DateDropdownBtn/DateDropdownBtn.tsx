@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { DatePicker } from 'antd';
 import locale from 'antd/es/date-picker/locale/ru_RU';
 import { classNames } from '../../../../shared/lib/classNames/classNames';
-import { PUBLIC_FOLDER } from '../../../../shared/helpers';
+import { PUBLIC_FOLDER } from '../../../../shared/lib/helpers';
 import { useAppDispatch } from '../../../../shared/lib/hooks';
 import { setDateRange, setDateType } from '../../../../entities/header/model';
 import { TypeTitles } from '../../../../entities/header/model/types';
@@ -35,8 +35,8 @@ export const DateDropdownBtn: FC<DateDropdownBtnProps> = ({ type, selected, stat
             type="button"
             onClick={() => {
                 dispatch(setDateType(type));
-                dispatch(setDateRange([calcDate(type), new Date()]));
                 if (type !== TypeTitles.customDate) {
+                    dispatch(setDateRange([calcDate(type), new Date()]));
                     statusSwitch();
                 }
             }}

@@ -1,5 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import dayjs from 'dayjs';
 import {
+    CallsInterface,
     CallsState,
     FilterCalls,
     FilterEmployees,
@@ -13,7 +15,10 @@ import {
 const initialState: CallsState = {
     isLoading: false,
     isLoadingError: '',
-    dateRange: [new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000), new Date()],
+    dateRange: [
+        dayjs(new Date(new Date().getTime() - 3 * 24 * 60 * 60 * 1000)).format('YYYY-MM-DD'),
+        dayjs(new Date()).format('YYYY-MM-DD'),
+    ],
     selectedDateType: TypeTitles.days,
     filters: {
         FilterTypes: FilterTypes.all,
@@ -24,6 +29,7 @@ const initialState: CallsState = {
         FilterErrors: FilterErrors.all,
     },
     resetFilters: false,
+    calls: {} as CallsInterface,
 };
 
 const callsSlice = createSlice({
@@ -31,7 +37,10 @@ const callsSlice = createSlice({
     initialState,
     reducers: {
         setDateRange(state, action: PayloadAction<[Date, Date]>) {
-            state.dateRange = action.payload;
+            state.dateRange = [
+                dayjs(action.payload[0]).format('YYYY-MM-DD'),
+                dayjs(action.payload[1]).format('YYYY-MM-DD'),
+            ];
         },
         setDateType(state, action: PayloadAction<TypeTitles>) {
             state.selectedDateType = action.payload;
@@ -64,6 +73,17 @@ const callsSlice = createSlice({
             state.resetFilters = false;
             state.filters.FilterErrors = action.payload;
         },
+        fetchingCalls(state) {
+            state.isLoading = true;
+        },
+        fetchSuccessCalls(state, action: PayloadAction<CallsInterface>) {
+            state.isLoading = false;
+            state.calls = action.payload;
+        },
+        fetchErrorCalls(state, action: PayloadAction<string>) {
+            state.isLoading = false;
+            state.isLoadingError = action.payload;
+        },
     },
 });
 
@@ -77,6 +97,9 @@ export const {
     addFilterSources,
     addFilterRates,
     addFilterErrors,
+    fetchingCalls,
+    fetchSuccessCalls,
+    fetchErrorCalls,
 } = callsSlice.actions;
 
 export const callsReducer = callsSlice.reducer;

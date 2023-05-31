@@ -4,6 +4,10 @@
 
     .wrapper {
         width: 100%;
-        height: 100vh;
+        margin-left: 240px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

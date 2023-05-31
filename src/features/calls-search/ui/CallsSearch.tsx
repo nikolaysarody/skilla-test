@@ -1,5 +1,5 @@
 import React from 'react';
-import { PUBLIC_FOLDER } from '../../../shared/helpers';
+import { PUBLIC_FOLDER } from '../../../shared/lib/helpers';
 import styles from './CallsSearch.module.scss';
 
 export const CallsSearch = () => {

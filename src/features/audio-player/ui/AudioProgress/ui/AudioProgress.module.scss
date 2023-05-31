@@ -1,0 +1,26 @@
+.wrapper {
+    position: relative;
+    .container {
+        width: 164px;
+        height: 4px;
+        border-radius: 50px;
+        overflow: hidden;
+        background-color: var(--ui-icon-color);
+        margin-left: 6px;
+
+        .filler {
+            background-color: var(--ui-accent);
+            height: 4px;
+            border-radius: 50px;
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        bottom: 5px;
+
+        &.hide {
+            display: none;
+        }
+    }
+}
