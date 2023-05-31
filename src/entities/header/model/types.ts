@@ -94,8 +94,8 @@ export interface FiltersInterface {
 }
 
 export enum FilterTypes {
-    incoming = 'incoming',
-    outgoing = 'outgoing',
+    incoming = 0,
+    outgoing = 1,
     all = 'all',
 }
 
