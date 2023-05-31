@@ -102,7 +102,9 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ duration, record, partnershi
                     }
                 }}
             />
-            {isPlaying ? <button type="button" className={styles.close} onClick={onStop} /> : null}
+            {(isPlaying && !loading) || progress > 0 ? (
+                <button type="button" className={styles.close} onClick={onStop} />
+            ) : null}
         </div>
     );
 };
